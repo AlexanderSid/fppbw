@@ -13,6 +13,11 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<style >
+#link-container {
+    text-align: center;
+}
+
+
 	</style>
     <!-- Custom styles for this template -->
     <link href="assets/css/heroic-features.css" rel="stylesheet">
@@ -24,7 +29,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top ">
       <div class="container">
-        <img class="navbar-brand" src="assets/img/eq.png"href="#" height="50" width="100"></a>
+        <img class="navbar-brand" src="assets/img/eq3.png"href="#" height="50" width="100"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,7 +61,11 @@
       <header class="jumbotron my-4">
         <h1 class="display-3">Mari berlangganan</h1>
         <p class="lead">Dengan berlangganan dengan Equitas anda akan mendapatkan berita-berita seputar hukum yang up to date dalam wilayah Malang raya</p>
-        <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+        <form action="<?php echo site_url('Subscribe/register_user'); ?>" method="post">
+        <input type="text" name="email" size="60">
+        <input type="submit" value="Subscribe">
+
+      </form>
       </header>
 
 
@@ -66,19 +75,19 @@
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="img1.jpg" style="width:100%">
+    <img src="assets/img/eq3.png" style="width:100%">
     <div class="text">Caption Text</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="img2.jpg" style="width:100%">
+    <img src="assets/img/eq3.png" style="width:100%">
     <div class="text">Caption Two</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="img3.jpg" style="width:100%">
+    <img src="assets/img/eq3.png" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
 
@@ -161,7 +170,11 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white"></p>
+        
+      </div>
+      <div id=link-container>
+      <a class="text-white" href="<?php echo site_url('login'); ?>">Masuk</p>
       </div>
       <!-- /.container -->
     </footer>
