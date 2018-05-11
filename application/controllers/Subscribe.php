@@ -9,16 +9,18 @@ class Subscribe extends CI_Controller{
 	}
  
 	function index(){
-		$this->load->view('v_subs');
+		$this->load->view('Home');
 	}
  
  
  function register_user(){
  
-      $email=$this->input->post('email');
+      $email=array(
+      'email'=>$this->input->post('email')
+        );
 		
 		$this->m_subs->register_user($email);
-		$this->load->view('v_registered');
+		$this->load->view('v_login');
 }		
 
 }
