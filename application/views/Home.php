@@ -11,7 +11,7 @@
     <title>Equitas</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<style >
 #link-container {
     text-align: center;
@@ -20,8 +20,8 @@
 
 	</style>
     <!-- Custom styles for this template -->
-    <link href="assets/css/heroic-features.css" rel="stylesheet">
-    <link href="assets/css/slideshow.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/heroic-features.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/slideshow.css" rel="stylesheet">
   </head>
 
   <body>
@@ -29,7 +29,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top ">
       <div class="container">
-        <img class="navbar-brand" src="assets/img/eq3.png"href="#" height="50" width="100"></a>
+        <img class="navbar-brand" src="<?php echo base_url('assets/img/eq3.png');?>"href="#" height="50" width="100"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,10 +44,10 @@
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Contact</a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Subscribe</a>
+              <a class="nav-link" href="#">Subscribe</a>
             </li>
           </ul>
         </div>
@@ -75,19 +75,19 @@
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="assets/img/eq3.png" style="width:100%">
+    <img src="<?php echo base_url('assets/img/eq3.png');?>" style="width:100%">
     <div class="text">Caption Text</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="assets/img/eq3.png" style="width:100%">
+    <img src="<?php echo base_url('assets/img/eq3.png');?>" style="width:100%">
     <div class="text">Caption Two</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="assets/img/eq3.png" style="width:100%">
+    <img src="<?php echo base_url('assets/img/eq3.png');?>" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
 
@@ -180,10 +180,10 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <script src="assets/js/slideshow.js"></script>
+    <script src="<?php echo base_url();?>assets/js/slideshow.js"></script>
 
 
   </body>
