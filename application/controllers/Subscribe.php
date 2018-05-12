@@ -20,7 +20,7 @@ class Subscribe extends CI_Controller{
         );
 		
 		$this->m_subs->register_user($email);
-		$this->load->view('v_login');
+		$this->load->view('Home');
 }		
 
 }
