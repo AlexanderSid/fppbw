@@ -15,7 +15,8 @@
 
          $config = array(
             'mailtype'=>"html",);
-      } 
+
+               } 
   
      /* public function send_mail() { 
 
@@ -34,7 +35,36 @@
          mail($to, $subject, $body);
          }
       }*/
+      public function sendmsg(){
+        $nama = $this->input->post('nama');
+        $email = $this->input->post('email');
+        $pesan = $this->input->post('pesan');
 
+        $config = array(
+         'protocol' => 'smtp',
+         'smtp_host' => 'ssl://smtp.googlemail.com',
+         'smtp_port' => 465,
+         'smtp_user' => 'furrieslord01@gmail.com', // change it to yours
+         'smtp_pass' => 'furrieslord', // change it to yours
+         'mailtype' => 'html',
+         'charset' => 'iso-8859-1',
+         'wordwrap' => TRUE
+      );
+
+       $this->load->library('email', $config);
+       $this->email->set_newline("\r\n");
+       $this->email->from($config['smtp_user']); // change it to yours
+       $this->email->to('furrieslord01@gmail.com');// change it to yours
+       $this->email->subject("Pesan dari ", $email, "bernama ",$nama);
+       $this->email->message($pesan);
+       if($this->email->send()){
+         $this->session->set_flashdata('message', 'Email sent');
+       }
+       else{
+         $this->session->set_flashdata('message', show_error($this->email->print_debugger()));
+ 
+       }
+      }
 
       public function sendemail(){
       $subject = $this->input->post('subject');
@@ -51,7 +81,7 @@
          }
          $to = implode(", ", $addresses);
  
-         $config = Array(
+         $config = array(
          'protocol' => 'smtp',
          'smtp_host' => 'ssl://smtp.googlemail.com',
          'smtp_port' => 465,
@@ -74,9 +104,8 @@
        else{
          $this->session->set_flashdata('message', show_error($this->email->print_debugger()));
  
-       }
- 
-       redirect('/');
+       } 
+       redirect('Email_controller');
  
    } 
    } 
