@@ -14,13 +14,22 @@ class Subscribe extends CI_Controller{
  
  
  function register_user(){
- 
-      $email=array(
+ 	$imail = $this->input->post('email');
+
+	if (filter_var($imail, FILTER_VALIDATE_EMAIL)) {
+  	$this->session->set_flashdata('code', '1');
+  	$email=array(
       'email'=>$this->input->post('email')
         );
 		
 		$this->m_subs->register_user($email);
-		$this->load->view('Home');
+
+	} else {
+  	$this->session->set_flashdata('code', '0');
+
+	}
+
+		redirect('subscribe');
 }		
 
 }
