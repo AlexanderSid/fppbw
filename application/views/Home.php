@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+	<?php
+    if (isset($emailErr)) {
+    $emailEr= $emailErr;    
+	}else{  
+    $emailEr= "";
+	}
+	?>
 
   <head>
 
@@ -11,13 +18,22 @@
     <title>Equitas</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<style >
-#link-container {
-    text-align: center;
-}
+	#link-container {
+    text-align: center;}
 
+	.btn-primary {
+  	color: #fff;
+  	background-color: #d80404;
+  	border-color: #d80404;
+	}
 
+	.card-title {
+	color: #d80404;
+  	margin-bottom: 0.75rem;
+	}
+	.error {color: #FF0000;}
 	</style>
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url();?>assets/css/heroic-features.css" rel="stylesheet">
@@ -41,13 +57,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="<?php echo site_url('main/about'); ?>">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="<?php echo site_url('main/contact'); ?>">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Subscribe</a>
+              <a class="nav-link" href="<?php echo site_url('tabloid'); ?>">Subscribe</a>
             </li>
           </ul>
         </div>
@@ -56,55 +72,26 @@
 
     <!-- Page Content -->
     <div class="container">
-
+    
       <!-- Jumbotron Header -->
-      <header class="jumbotron my-4">
-        <h1 class="display-3">Mari berlangganan</h1>
-        <p class="lead">Dengan berlangganan dengan Equitas anda akan mendapatkan berita-berita seputar hukum yang up to date dalam wilayah Malang raya</p>
+      <header class="jumbotron">
+        <h1 class="display-4">Mari berlangganan</h1>
+        <p class="lead">Dengan berlangganan dengan Equitas online anda akan mendapatkan berita-berita seputar hukum & politik yang up to date dalam wilayah Malang raya dan Nusa Tenggara Timur secara gratis, jangan lewatkan setiap berita baru hanya dengan akses internet</p>
         <form action="<?php echo site_url('Subscribe/register_user'); ?>" method="post">
-        <input type="text" name="email" size="60">
-        <input type="submit" value="Subscribe">
+        <input type="text" name="email" size="60" placeholder="Masukkan Email..">
+        <input type="submit" value="Subscribe"><br>
+        <?php if($this->session->flashdata('code') =='1'): ?>
+          <p style="color: green;"> Email berhasil ditambahkan</p>
+        <?php elseif($this->session->flashdata('code') =='0'): ?>
+        <p style="color: red;"> Email gagal ditambahkan</p>
+        <?php else :?>
+        <?php endif; ?>
+        
 
       </form>
       </header>
 
 
-<!-- Slideshow container -->
-<div class="slideshow-container">
-
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="<?php echo base_url('assets/img/eq3.png');?>" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="<?php echo base_url('assets/img/eq3.png');?>" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="<?php echo base_url('assets/img/eq3.png');?>" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-<p></p>
-<p></p>
 
       <!-- Page Features -->
       <div class="row text-center">
@@ -113,11 +100,11 @@
           <div class="card">
             <img class="card-img-top" src="http://placehold.it/500x325" alt="">
             <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+              <h4 class="card-title">Langganan Tabloid</h4>
+              <p class="card-text">Dapatkan berita fresh dalam bentuk kertas hangat yang akan menemani anda dengan berita-berita seputar Malang raya dan NTT</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
+              <a href="<?php echo site_url('tabloid'); ?>" class="btn btn-primary">Find Out More!</a>
             </div>
           </div>
         </div>
@@ -126,11 +113,11 @@
           <div class="card">
             <img class="card-img-top" src="http://placehold.it/500x325" alt="">
             <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+              <h4 class="card-title">Keunggulan Kami</h4>
+              <p class="card-text">Apa saja yang dapat kami tawarkan kepada anda.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
+              <a href="<?php echo site_url('main/unggul'); ?>" class="btn btn-primary">Find Out More!</a>
             </div>
           </div>
         </div>
@@ -139,11 +126,11 @@
           <div class="card">
             <img class="card-img-top" src="http://placehold.it/500x325" alt="">
             <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+              <h4 class="card-title">About us</h4>
+              <p class="card-text">Profil tabloid Equitas, sejarah dan segala sesuatu tentang Equitas.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
+              <a href="<?php echo site_url('main/about'); ?>" class="btn btn-primary">Find Out More!</a>
             </div>
           </div>
         </div>
@@ -152,11 +139,11 @@
           <div class="card">
             <img class="card-img-top" src="http://placehold.it/500x325" alt="">
             <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+              <h4 class="card-title">Contact Us</h4>
+              <p class="card-text">Hubungi kami!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
+              <a href="<?php echo site_url('main/contact'); ?>" class="btn btn-primary">Find Out More!</a>
             </div>
           </div>
         </div>
