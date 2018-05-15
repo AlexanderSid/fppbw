@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Equitas</title>
+    <title>Equitas - Admin</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>assets/css/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +48,8 @@
 
       <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
-      	<h2 class="display-5" style="text-align:center;" >Kirim Email ke Subscriber</h1>
+      	<h2 class="display-5" style="text-align:center;" >Kirim Email ke Subscriber</h2>
+        <p style="text-align: center; color: green;"><?php echo $this->session->flashdata('message'); ?></p>
       	<form action="<?php echo site_url('Email_controller/sendemail'); ?>" method="post">
     			<p>Subject</p>
     			<input type="text" name="subject" size="80">
