@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-	<?php
-    if (isset($emailErr)) {
-    $emailEr= $emailErr;    
-	}else{  
-    $emailEr= "";
-	}
-	?>
 
   <head>
 
