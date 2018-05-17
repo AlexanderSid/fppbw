@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <?php
-    if (isset($emailErr)) {
-    $emailEr= $emailErr;    
-  }else{  
-    $emailEr= "";
-  }
-  ?>
+
 
   <head>
 
@@ -19,7 +13,13 @@
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>assets/css/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
   <style >
+  .display-6 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
   #link-container {
     text-align: center;}
 
@@ -27,13 +27,19 @@
     color: #fff;
     background-color: #d80404;
     border-color: #d80404;
-  }
+    }
 
   .card-title {
   color: #d80404;
     margin-bottom: 0.75rem;
   }
   .error {color: #FF0000;}
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
   </style>
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url();?>assets/css/heroic-features.css" rel="stylesheet">
@@ -45,7 +51,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top ">
       <div class="container">
-        <img class="navbar-brand" src="<?php echo base_url('assets/img/eq3.png');?>"href="#" height="50" width="100"></a>
+        <a class="navbar-brand">Equitas - About us</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -74,8 +80,13 @@
     <div class="container">
     
       <!-- Jumbotron Header -->
-      <header class="jumbotron">
-        <h1 class="display-4">NOT YET AVAILABLE</h1>
+
+      <h1 class="display-6 text-center">About Us</h1>
+      <header class="jumbotron">        
+        <img class="center"src="<?php echo base_url('assets/img/eq3.png');?>" >
+        <p class="lead">Equitas adalah tabloid yang mulai didirikan sejak tahun .... oleh bpk Antonius,
+        blablablablablabla blablablablablablablablablablablablablablabla blablablablablablablablabla</p>
+        
       </header>
 
 
