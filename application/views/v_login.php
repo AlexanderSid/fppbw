@@ -63,7 +63,11 @@
 
     <div class="wrapper">
     <form class="form-signin" method="post" action="login/aksi_login">       
-      <h2 class="form-signin-heading">Please login</h2>
+      <h2 class="form-signin-heading">Silahkan Login</h2>
+      <?php if($this->session->flashdata('kode') =='0'): ?>
+          <p style="color: red;"> Username/Password salah</p>
+        <?php else :?>
+        <?php endif; ?>
       <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
