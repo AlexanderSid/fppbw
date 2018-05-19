@@ -3,8 +3,13 @@
 class Login extends CI_Controller{
  
 	function __construct(){
-		parent::__construct();		
-		$this->load->model('m_login');
+		parent::__construct();
+		$loginstatus   = $this->session->userdata('status');
+          if($loginstatus=="login"){
+          redirect(base_url("admin"));
+     		}
+
+    $this->load->model('m_login');   
  
 	}
  
@@ -28,11 +33,12 @@ class Login extends CI_Controller{
 				);
  
 			$this->session->set_userdata($data_session);
- 
+ 			$this->session->set_flashdata('kode', '1');
 			$this->load->view('v_admin');
  
 		}else{
-			echo "Username dan password salah !";
+			$this->session->set_flashdata('kode', '0');
+			redirect('login');
 		}
 	}
  
@@ -41,8 +47,6 @@ class Login extends CI_Controller{
 		redirect(base_url('main'));
 	}
 
-		function admin(){
-		$this->load->view('v_admin');
-	}
+
 
 }
