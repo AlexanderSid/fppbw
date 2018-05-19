@@ -1,0 +1,125 @@
+  #link-container {
+    text-align: center;
+}
+
+.my-4 {
+  margin-bottom: 1rem !important;
+  margin-top: 1rem !important;
+}
+.display-6 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.mtop {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+/* Contact Section
+--------------------------------*/
+#langgan {
+  padding: 60px 0;
+}
+
+#langgan .langgan-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#langgan .langgan-info i {
+  font-size: 48px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #18d26e;
+}
+
+#langgan .langgan-info address, #langgan .langgan-info p {
+  margin-bottom: 0;
+  color: #000;
+}
+
+#langgan .langgan-info h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #999;
+}
+
+#langgan .langgan-info a {
+  color: #000;
+}
+
+#langgan .langgan-info a:hover {
+  color: #18d26e;
+}
+
+#langgan .langgan-address, #langgan .langgan-phone, #langgan .langgan-email {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  #langgan .langgan-address, #langgan .langgan-phone, #langgan .langgan-email {
+    padding: 20px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  #langgan .langgan-phone {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+}
+
+#langgan .form #sendmessage {
+  color: #18d26e;
+  border: 1px solid #18d26e;
+  display: none;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#langgan .form #errormessage {
+  color: red;
+  display: none;
+  border: 1px solid red;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#langgan .form #sendmessage.show, #langgan .form #errormessage.show, #langgan .form .show {
+  display: block;
+}
+
+#langgan .form .validation {
+  color: red;
+  display: none;
+  margin: 0 0 20px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+#langgan .form input, #langgan .form textarea {
+  padding: 10px 14px;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 15px;
+}
+
+#langgan .form button[type="submit"] {
+  background: #18d26e;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+#langgan .form button[type="submit"]:hover {
+  background: #13a456;
+}
