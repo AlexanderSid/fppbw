@@ -19,8 +19,31 @@ class Tabloid extends CI_Controller{
  	$nama=$this->input->post('nama');
  	$alamat=$this->input->post('alamat');
  	$nope=$this->input->post('nope');
+ 	$able= true;
 
- 	$data= array(
+ 	if (empty($nama)) {
+    $this->session->set_flashdata('b', '0');
+    $able= false;
+	}
+
+	if (empty($nope)) {
+    $this->session->set_flashdata('c', '0');
+    $able= false;
+	}
+	else{
+		if (!is_numeric($nope)) {
+    	$this->session->set_flashdata('c', '2');
+    	$able= false;
+		}
+	}
+
+	if (empty($alamat)) {
+    $this->session->set_flashdata('d', '0');
+    $able= false;
+	}
+
+	if ($able==true) {
+		$data= array(
  		'nama' => $nama,
  		'alamat' => $alamat,
  		'nope'=>$nope
@@ -28,6 +51,14 @@ class Tabloid extends CI_Controller{
 		
 		$this->m_tablo->register_user($data,'tabloid');
 		$this->load->view('v_langgan');
+
+	}
+
+ 	else{
+ 		$this->session->set_flashdata('a', '0');
+ 	}
+
+ 	redirect('tabloid');
 }		
 
 }
